@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cf.bsixapp.mbg.mapper.BackPermissionExtMapper">
+
+    <select id="gerPermissionsByAdminId">
+
+    </select>
+
+    <select id="getPermissionByRoleId" resultMap="com.cf.bsixapp.mbg.mapper.BackPermissionMapper.BaseResultMap">
+        SELECT
+            p.*
+        FROM
+            (
+            SELECT
+                brp.permission_id
+            FROM
+                bsix_back_role_permission_rel brp
+            WHERE
+                brp.role_id = 1
+            ) rpl
+        LEFT JOIN
+            bsix_back_permission p
+        ON
+            rpl.permission_id = p.id
+        ORDER BY
+            p.order_seq
+    </select>
+</mapper>

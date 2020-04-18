@@ -30,7 +30,12 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="bsix_back_admin" domainObjectName="BSixBackAdmin" ></table>
+        <table tableName="bsix_back_admin" domainObjectName="BackAdmin" ></table>
+        <table tableName="bsix_back_permission" domainObjectName="BackPermission" ></table>
+        <table tableName="bsix_back_admin_permission_rel" domainObjectName="BackAdminPermissionrRel" ></table>
+        <table tableName="bsix_back_role" domainObjectName="BackRole" ></table>
+        <table tableName="bsix_back_admin_role_rel" domainObjectName="BackAdminRoleRel" ></table>
+        <table tableName="bsix_back_role_permission_rel" domainObjectName="BackRolePermissionRel" ></table>
 
     </context>
 </generatorConfiguration>
